@@ -16,7 +16,7 @@
           <p class="url">url: <%= shortoner.url %></p>
           </div>
          <div>  
-         <p class="url">short_url: localhost:3000/<%= shortoner.short_url %></p> 
+         <p class="url">short_url: <%=request.base_url%>/<%= shortoner.short_url %></p> 
          </div>
       <%= link_to "delete", "shortoners/" + shortoner.short_url , :method => 'delete' %>  
       </div>
