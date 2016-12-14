@@ -1,0 +1,1 @@
+json.array! @shortoners, partial: 'shortoners/shortoner', as: :shortoner

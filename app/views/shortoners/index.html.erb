@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Url shortoner</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shortoners.each do |shortoner| %> 
+     <div class="shortoners">
+        <% if cuurent_user = shortoner.user_id%>        
+          <div>
+          <p class="url">url: <%= shortoner.url %></p>
+          </div>
+         <div>  
+         <p class="url">short_url: localhost:3000/<%= shortoner.short_url %></p> 
+         </div>
+      <%= link_to "delete", "shortoners/" + shortoner.short_url , :method => 'delete' %>  
+      </div>
+        <% end %>  
+     <% end %>
+  </tbody>
+</table>
+
+<br>

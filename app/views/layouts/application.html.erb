@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>URLShortener</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<% if user_signed_in? %>
+  	<p>Hello, <%= current_user.email %> - <%= link_to "sign_out", destroy_user_session_path, :method => 'delete' %></p>
+  <p>press on the link shorter your url: <%= link_to('url_shorter', shortoners_new_new_path)  %>  
+    <% else %>
+  <p>Hi, welcome to url_shorter please login!</p>  
+  <%= link_to('Login', new_user_session_path)  %>  
+    <% end%>
+
+    <%= yield %>
+  </body>
+</html>

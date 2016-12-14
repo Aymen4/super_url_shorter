@@ -1,0 +1,17 @@
+<%= form_for(shortoner) do |f| %>
+  <% if shortoner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shortoner.errors.count, "error") %> prohibited this shortoner from being saved:</h2>
+
+      <ul>
+      <% shortoner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
