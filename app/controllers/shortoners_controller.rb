@@ -4,7 +4,7 @@ class ShortonersController < ApplicationController
   # GET /shortoners
   # GET /shortoners.json
   def index
-    @shortoners = Shortoner.where(:user_id => current_user.id)
+    @shortoners = Shortoner.where(:user => current_user.id)
 end
 
 
@@ -28,7 +28,7 @@ end
     @shortoner = Shortoner.new(shortoner_params) 
     l,m = 5,36 
     @shortoner.short_url = rand(m**l).to_s(m).rjust(l,'0')
-    @shortoner.user_id = current_user.id
+    @shortoner.user = current_user.id
      if @shortoner.save 
       redirect_to '/shortoners'
     else 

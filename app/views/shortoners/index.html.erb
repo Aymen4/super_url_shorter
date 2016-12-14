@@ -11,7 +11,7 @@
   <tbody>
     <% @shortoners.each do |shortoner| %> 
      <div class="shortoners">
-        <% if cuurent_user = shortoner.user_id%>        
+        <% if cuurent_user = shortoner.user%>        
           <div>
           <p class="url">url: <%= shortoner.url %></p>
           </div>
